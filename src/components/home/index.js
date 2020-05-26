@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Container, Row, Col } from 'react-bootstrap';
 import Footer from './footer';
 import Header from './header';
 import Content from './content';
@@ -10,7 +10,7 @@ class Home extends Component {
 
     // Initial State
     this.state = {
-      textHeader: null,
+      textHeader: 'Welcome !',
     };
   }
 
@@ -19,9 +19,23 @@ class Home extends Component {
 
     return (
       <div>
-        <Header text={textHeader || 'hello'} />
-        <Content />
-        <Footer />
+        <Container fluid>
+          <Row>
+            <Col className="col-12">
+              <Header text={textHeader || 'hello'} />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-12">
+              <Content />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-12">
+              <Footer />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
